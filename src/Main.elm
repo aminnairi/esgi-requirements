@@ -66,60 +66,37 @@ type alias Model =
 init : Model
 init =
   { branches =
-      [ { name = "Premier cycle"
-        , identifier = "premier-cycle"
+      [ { name = "Général"
+        , identifier = "general"
         , promotions =
-            [ { name = "Deuxième année"
+            [ { name = "Comportement"
               , requirements =
-                  [ { name = "Mathématiques"
+                  [ { name = "Souriant"
                     , validated = False
                     }
-                  , { name = "Modélisation de base de données"
+                  , { name = "Détendu"
                     , validated = False
                     }
-                  , { name = "Algorithmiques et structures de données"
+                  , { name = "À l'aise à l'oral"
                     , validated = False
                     }
-                  , { name = "Langage C"
+                  , { name = "Intéressé"
                     , validated = False
                     }
-                  , { name = "Architecture des réseaux"
+                  , { name = "Respectueux"
                     , validated = False
                     }
-                  , { name = "Circuits logiques et architecture d'un ordinateur"
+                  ]
+              }
+            , { name = "Scolarité"
+              , requirements =
+                  [ { name = "Peu d'absence"
                     , validated = False
                     }
-                  , { name = "Virtualisation et gestion de parcs informatiques"
+                  , { name = "Bonnes appréciations"
                     , validated = False
                     }
-                  , { name = "Administration système Linux"
-                    , validated = False
-                    }
-                  , { name = "Administration système Windows"
-                    , validated = False
-                    }
-                  , { name = "Architecture Web"
-                    , validated = False
-                    }
-                  , { name = "HTML"
-                    , validated = False
-                    }
-                  , { name = "CSS"
-                    , validated = False
-                    }
-                  , { name = "JavaScript"
-                    , validated = False
-                    }
-                  , { name = "PHP"
-                    , validated = False
-                    }
-                  , { name = "Développement Excel & VBA"
-                    , validated = False
-                    }
-                  , { name = "Modélisation et IHM"
-                    , validated = False
-                    }
-                  , { name = "Anglais"
+                  , { name = "Bonnes notes"
                     , validated = False
                     }
                   ]
@@ -1670,7 +1647,11 @@ viewRequirement branch promotion requirement =
         , Html.Events.onCheck ( ValidateBranchPromotionRequirement branch promotion requirement )
         ]
         []
-    , Html.text requirement.name
+    , Html.span
+        [ Html.Attributes.style "color" (if requirement.validated then "#65a30d" else "black")
+        , Html.Attributes.style "transition" "0.25s linear"
+        ]
+        [ Html.text requirement.name ]
     ]
 
 
