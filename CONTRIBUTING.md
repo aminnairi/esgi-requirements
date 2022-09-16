@@ -14,32 +14,32 @@ cp .env.example .env
 
 *Note: you can edit the `.env` to your match your prefered environment settings.*
 
+## Docker Compose Services Startup
+
+```bash
+make start
+```
+
 ## Development server
 
 ```bash
 make development
 ```
 
-## Surge publishing
+## Production
 
 ```bash
-make publish
+make production
 ```
 
-## Surge publish list
-
-```bash
-make list
-```
-
-## Surge unpublishing
-
-```bash
-make unpublish
-```
-
-## Stop Docker Compose services
+## Docker Compose Services Shutdown
 
 ```bash
 make stop
+```
+
+## Docker Compose Services Restart
+
+```bash
+make restart
 ```

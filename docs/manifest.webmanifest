@@ -1,0 +1,22 @@
+{
+  "background_color": "#ffffff",
+  "description": "Website allowing interviewee to be assessed with pre-requisites for joining the ESGI.",
+  "dir": "ltr",
+  "display": "standalone",
+  "lang": "fr-FR",
+  "name": "ESGI Requirements",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "short_name": "ESGI Requirements",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

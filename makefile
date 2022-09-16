@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-.PHONY: start stop restart install development production publish unpublish list
+.PHONY: start stop restart install development production
 
 DOCKER_COMPOSE_EXEC_OPTIONS=
 
@@ -38,12 +38,3 @@ development: install
 
 production: install
 	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npm run production
-
-list: install
-	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npx surge list
-
-publish: production
-	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npx surge
-
-unpublish: install
-	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npx surge teardown

@@ -36,7 +36,7 @@ export default {
   input: "src/main.js",
   plugins: [
     remove({
-      targets: "build/*",
+      targets: "docs/*",
       verbose: true,
       runOnce: isDevelopment
     }),
@@ -47,7 +47,7 @@ export default {
       targets: [
         {
           src: "assets/*",
-          dest: "build"
+          dest: "docs"
         }
       ]
     }),
@@ -95,7 +95,7 @@ export default {
     }),
     isDevelopment && serve({
       contentBase: [
-        "build"
+        "docs"
       ],
       historyApiFallback: true,
       port: serverPort,
@@ -140,7 +140,7 @@ export default {
     })
   ],
   output: {
-    file: "build/main.js",
+    file: "docs/main.js",
     format: "iife"
   }
 };
