@@ -1794,11 +1794,29 @@ viewBranchSummary branch =
     ]
 
 
-viewBranchesSummary : List Branch -> Html Message
+viewBranchesSummary : List Branch -> List (Html Message)
 viewBranchesSummary branches =
-  Html.div
-    []
-    ( List.map viewBranchSummary branches )
+    List.map viewBranchSummary branches
+
+
+viewFooter : Html Message
+viewFooter =
+  Html.footer
+    [ Html.Attributes.style "border-top" "0px solid lightgrey"
+    , Html.Attributes.style "padding-top" "10px"
+    , Html.Attributes.style "padding-bottom" "10px"
+    , Html.Attributes.style "margin-top" "10px"
+    , Html.Attributes.style "marigin-bottom" "10px"
+    ]
+    [ Html.small
+      [ Html.Attributes.style "color" "grey"
+      , Html.Attributes.style "font-family" "Gideon Roman"
+      , Html.Attributes.style "font-weight" "100"
+      , Html.Attributes.style "display" "block"
+      , Html.Attributes.style "text-align" "center"
+      ]
+      [ Html.text "2022 © Amin NAIRI" ]
+    ]
 
 
 view : Model -> Html Message
@@ -1828,8 +1846,9 @@ view model =
         [ Html.Attributes.style "margin" "0"
         , Html.Attributes.style "padding" "0"
         ]
-        [ viewBranchesSummary model.branches ]
+        (viewBranchesSummary model.branches)
     , Html.div [] ( viewBranches model.branches )
+    , viewFooter
     ]
 
 
