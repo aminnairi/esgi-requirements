@@ -38,6 +38,3 @@ development: install
 
 production: install
 	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npm run production
-
-mrproper: start
-	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node sh -c 'for file in ./.gitignore; do rm -rf $$file; done'
