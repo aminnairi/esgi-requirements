@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-.PHONY: start stop restart install development production
+.PHONY: start stop restart install development production mrproper
 
 DOCKER_COMPOSE_EXEC_OPTIONS=
 
@@ -38,3 +38,6 @@ development: install
 
 production: install
 	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node npm run production
+
+mrproper: start
+	docker-compose exec $(DOCKER_COMPOSE_EXEC_OPTIONS) node sh -c 'for file in ./.gitignore; do rm -rf $$file; done'
