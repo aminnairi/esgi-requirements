@@ -22,11 +22,18 @@ import Elm from "./Main.elm";
 
 // ELM
 
-Elm.Main.init({
+const main = Elm.Main.init({
   node: document.getElementById("main")
 });
 
-// Fonts
+
+// OUTGOING PORTS
+
+main.ports.vibrate.subscribe(() => {
+  navigator.vibrate(25)
+})
+
+// FONTS
 
 const link = window.document.createElement("link");
 
