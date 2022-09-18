@@ -1,9 +1,7 @@
 /.elm/
 /.node_repl_history
 /.npm/
-/build/
 /elm-stuff/
 /node_modules/
 /package-lock.json
-/.netrc
 /.env
